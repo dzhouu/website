@@ -1,0 +1,82 @@
+@keyframes fadeInAndMove {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-title, .navbar-button {
+    animation: fadeInAndMove 5s ease forwards;
+    /* Ensure the name element is on top of bubbles */
+    z-index: 20;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-100px) scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-200px) scale(1);
+        opacity: 0;
+    }
+}
+
+.navbar {
+    display: flex;
+    margin-top: 20px;
+}
+
+.navbar-button {
+    width: 6.5em;
+    height: 2.3em;
+    padding: 10px 20px;
+    margin: 0 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar-button:hover {
+    background-color: #45a049;
+}
+
+.bubble {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffb6c1; /* Adjust color as needed */
+    border-radius: 50%;
+    animation: bubble 3s ease-in-out infinite;
+    /* Adjusted left positioning */
+    left: calc(100vw * var(- -random-x)); /* Ensure bubbles can generate across entire width */
+}
+
+button {
+    cursor: pointer;
+    filter: drop-shadow(0 0 2px rgba(56, 56, 56, 0.1));
+    font-size: 1.1em;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(90deg, #b1b1ff, #664ff5);
+    backdrop-filter: blur(2px);
+    border: none;
+    color: white;
+    padding: 5px;
+    transition: color 0.35s;
+}
